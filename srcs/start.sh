@@ -1,3 +1,11 @@
+echo "Autoindex ?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) break;;
+        No ) exit;;
+    esac
+done
+
 service mysql start
 
 # Config Access
