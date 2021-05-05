@@ -16,6 +16,7 @@
 
     server_name coolwebsite www.coolwebsite;
 
+	ssl on;
     ssl_certificate /etc/nginx/ssl/coolwebsite.pem;
     ssl_certificate_key /etc/nginx/ssl/coolwebsite.key;
 
