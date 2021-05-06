@@ -1,9 +1,19 @@
-echo "Autoindex ?"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) break;;
-        No ) exit;;
-    esac
+echo "Autoindex :"
+select ans in on off;
+do
+	case $ans in
+	on)
+		echo "autoindex is on"
+		break
+		;;
+	off)
+		sed -i "s/autoindex on/autoindex off/" /etc/nginx/sites-available/coolwebsite
+		echo "autoindex is off"
+		break
+		;;
+	*)
+		echo "select using numbers 1 or 2"
+	esac
 done
 
 service mysql start

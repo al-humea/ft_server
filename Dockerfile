@@ -6,7 +6,7 @@
 #    By: al-humea <al-humea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/28 15:33:23 by al-humea          #+#    #+#              #
-#    Updated: 2021/05/05 23:34:52 by al-humea         ###   ########.fr        #
+#    Updated: 2021/05/06 10:59:20 by al-humea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,8 +52,5 @@ COPY srcs/phpmyadmin.inc.php /var/www/coolwebsite/phpmyadmin/config.inc.php
 #Enabling coolwebsite / disabling default one
 RUN ln -s /etc/nginx/sites-available/coolwebsite /etc/nginx/sites-enabled/coolwebsite
 RUN rm /etc/nginx/sites-enabled/default
-
-#Env var for auto index
-ENV NGINX_AUTOINDEX=1
 
 CMD bash start.sh
