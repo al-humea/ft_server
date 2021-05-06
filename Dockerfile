@@ -6,11 +6,10 @@
 #    By: al-humea <al-humea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/28 15:33:23 by al-humea          #+#    #+#              #
-#    Updated: 2021/05/06 10:59:20 by al-humea         ###   ########.fr        #
+#    Updated: 2021/05/06 11:36:45 by al-humea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#I hate this project.
 FROM debian:buster
 
 LABEL maintainer="al-humea@student.42.fr"
