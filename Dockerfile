@@ -6,7 +6,7 @@
 #    By: al-humea <al-humea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/28 15:33:23 by al-humea          #+#    #+#              #
-#    Updated: 2021/05/07 14:31:31 by al-humea         ###   ########.fr        #
+#    Updated: 2021/05/07 14:34:52 by al-humea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,17 +14,17 @@ FROM debian:buster
 
 LABEL maintainer="al-humea@student.42.fr"
 
+#Installing essentials
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get -y install	nginx \
 						wget \
 						mariadb-server
-RUN apt-get -y install php
 RUN apt-get -y install php7.3-fpm php7.3-common php7.3-mysql php7.3-gmp php7.3-curl php7.3-intl php7.3-mbstring php7.3-xmlrpc php7.3-gd php7.3-xml php7.3-cli php7.3-zip php7.3-soap php7.3-imap
 
+#Creating a folder for my website
 RUN mkdir /var/www/coolwebsite
 WORKDIR /var/www/coolwebsite
 RUN touch info.php && echo "<?php phpinfo(); ?>" >> info.php
-
 
 #downloading phpmyadmin
 RUN mkdir phpmyadmin
