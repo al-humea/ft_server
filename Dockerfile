@@ -6,7 +6,7 @@
 #    By: al-humea <al-humea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/28 15:33:23 by al-humea          #+#    #+#              #
-#    Updated: 2021/05/07 14:34:52 by al-humea         ###   ########.fr        #
+#    Updated: 2021/05/07 14:41:06 by al-humea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,4 +51,5 @@ COPY srcs/phpmyadmin.inc.php /var/www/coolwebsite/phpmyadmin/config.inc.php
 RUN ln -s /etc/nginx/sites-available/coolwebsite /etc/nginx/sites-enabled/coolwebsite
 RUN rm /etc/nginx/sites-enabled/default
 
+#Sets the first command to execute at startup
 CMD bash start.sh

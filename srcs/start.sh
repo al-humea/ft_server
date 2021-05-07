@@ -1,3 +1,16 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    start.sh                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: al-humea <al-humea@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/05/07 14:39:43 by al-humea          #+#    #+#              #
+#    Updated: 2021/05/07 14:40:11 by al-humea         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#Setting auto index on or off
 echo "Autoindex :"
 select ans in on off;
 do
@@ -15,6 +28,7 @@ do
 		echo "select using numbers 1 or 2"
 	esac
 done
+
 #start mysql
 service mysql start
 
@@ -31,4 +45,6 @@ echo "FLUSH PRIVILEGES;" | mysql -u root --skip-password
 #start php / nginx
 service php7.3-fpm start
 service nginx start
+
+#so the server stays on
 bash
