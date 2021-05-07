@@ -2,7 +2,7 @@
      listen 80;
      listen [::]:80;
 
-     server_name coolwebsite www.coolwebsite;
+     server_name coolwebsite;
 
 	 root /var/www/coolwebsite;
 
@@ -14,10 +14,10 @@
     listen 443 ssl;
     listen [::]:443 ssl;
 
-    server_name coolwebsite www.coolwebsite;
+    server_name coolwebsite;
 
 	ssl on;
-    ssl_certificate /etc/nginx/ssl/coolwebsite.pem;
+    ssl_certificate /etc/nginx/ssl/coolwebsite.crt;
     ssl_certificate_key /etc/nginx/ssl/coolwebsite.key;
 
     root /var/www/coolwebsite;

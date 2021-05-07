@@ -6,7 +6,7 @@
 #    By: al-humea <al-humea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/28 15:33:23 by al-humea          #+#    #+#              #
-#    Updated: 2021/05/06 11:36:45 by al-humea         ###   ########.fr        #
+#    Updated: 2021/05/07 14:31:31 by al-humea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ RUN apt-get -y install	nginx \
 						mariadb-server
 RUN apt-get -y install php
 RUN apt-get -y install php7.3-fpm php7.3-common php7.3-mysql php7.3-gmp php7.3-curl php7.3-intl php7.3-mbstring php7.3-xmlrpc php7.3-gd php7.3-xml php7.3-cli php7.3-zip php7.3-soap php7.3-imap
-
 
 RUN mkdir /var/www/coolwebsite
 WORKDIR /var/www/coolwebsite
@@ -40,7 +39,7 @@ RUN rm -rf latest.tar.gz
 
 #creating ssl key
 RUN mkdir /etc/nginx/ssl
-RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out /etc/nginx/ssl/coolwebsite.pem -keyout /etc/nginx/ssl/coolwebsite.key -subj "/C=FR/ST=Paris/L=Paris/O=42Paris/OU=alhumea/CN=coolwebsite"
+RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out /etc/nginx/ssl/coolwebsite.crt -keyout /etc/nginx/ssl/coolwebsite.key -subj "/C=FR/ST=Paris/L=Paris/O=42Paris/OU=alhumea/CN=coolwebsite"
 
 #Copying my srcs to correct locations + removing default site enabled on port 80
 COPY srcs/start.sh /var/www/coolwebsite
